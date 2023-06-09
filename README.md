@@ -20,7 +20,11 @@ This uses Telegraf with the  `zpool_influxdb` collector. A [detailed setup guide
   # CHECK PATH! Default installation location for zpool_influxdb command may be elsewhere
   commands = ["/usr/lib/zfs-linux/zpool_influxdb"]
   timeout = "5s"
+  data_format = "influx"
 ```
+
+Thanks to [@CalebFenton](https://github.com/CalebFenton) for noting `data_format` is needed too.
+
 ## Porting Details
 
 If you're interested in how this was ported from influxQL to flux, I have a series of posts over on my blog on the motivation and process: [Part 1](https://blog.roberthallam.org/2022/09/monitoring-zfs-latencies-in-proxmox-part-1/), [Part 2](https://blog.roberthallam.org/2022/09/monitoring-zfs-with-influxdb-grafana-graph-time-part-2/), [Part 3](https://blog.roberthallam.org/2022/09/monitoring-zfs-with-influxdb-grafana-adapting-panels-part-3/), [Part 4](https://blog.roberthallam.org/2022/09/monitoring-zfs-with-influxdb-grafana-tidying-up-part-4/), [Part 5](https://blog.roberthallam.org/2022/09/monitoring-zfs-with-influxdb-grafana-publishing-and-reflection-part-5/).
